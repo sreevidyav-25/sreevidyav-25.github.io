@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sreevidya V | Data Science Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b1120;
+            color: #e5e7eb;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 17, 32, 0.95);
+            border-bottom: 1px solid #1e293b;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .logo span {
+            color: #60a5fa;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 90px 25px;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .small-title {
+            color: #60a5fa;
+            font-weight: bold;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: clamp(42px, 7vw, 72px);
+            line-height: 1.1;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        h1 span {
+            color: #60a5fa;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: #94a3b8;
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .primary:hover {
+            background: #2563eb;
+        }
+
+        .secondary {
+            border: 1px solid #475569;
+            color: white;
+        }
+
+        .secondary:hover {
+            border-color: #60a5fa;
+            color: #60a5fa;
+        }
+
+        .section-title {
+            font-size: 35px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            color: #64748b;
+            margin-bottom: 35px;
+        }
+
+        .about-text {
+            color: #cbd5e1;
+            font-size: 17px;
+            max-width: 850px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .skill {
+            background: #111827;
+            border: 1px solid #263449;
+            color: #cbd5e1;
+            padding: 10px 16px;
+            border-radius: 25px;
+            font-size: 14px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+        }
+
+        .card h3 {
+            color: white;
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .card p {
+            color: #94a3b8;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .tag {
+            color: #93c5fd;
+            background: #172554;
+            padding: 5px 9px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        .experience {
+            border-left: 2px solid #3b82f6;
+            padding-left: 25px;
+        }
+
+        .experience-item {
+            margin-bottom: 35px;
+        }
+
+        .experience-item h3 {
+            color: white;
+            font-size: 20px;
+        }
+
+        .experience-item .company {
+            color: #60a5fa;
+            margin: 5px 0;
+        }
+
+        .experience-item p {
+            color: #94a3b8;
+        }
+
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 15px;
+        }
+
+        .certificate {
+            background: #111827;
+            padding: 18px;
+            border: 1px solid #1e293b;
+            border-radius: 10px;
+        }
+
+        .certificate h3 {
+            color: white;
+            font-size: 16px;
+        }
+
+        .certificate p {
+            color: #64748b;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        .contact-box {
+            text-align: center;
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 15px;
+            padding: 45px 25px;
+        }
+
+        .contact-box p {
+            color: #94a3b8;
+            margin: 15px auto 25px;
+            max-width: 600px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #64748b;
+            border-top: 1px solid #1e293b;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                padding: 15px 20px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            section {
+                padding: 65px 20px;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Sreevidya<span>.</span></div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="small-title">B.Tech CSE — DATA SCIENCE</div>
+
+            <h1>
+                Hi, I'm <span>Sreevidya V.</span>
+            </h1>
+
+            <p>
+                A Data Science student interested in Data Analytics,
+                Machine Learning, NLP and building practical technology
+                solutions using data.
+            </p>
+
+            <div class="buttons">
+                <a class="button primary" href="#projects">View My Projects</a>
+
+                <a class="button secondary"
+                   href="https://www.linkedin.com/in/sreevidya-v-babb36290/"
+                   target="_blank">
+                    LinkedIn
+                </a>
+
+                <a class="button secondary"
+                   href="https://github.com/sreevidyav-25"
+                   target="_blank">
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">A little about my background</p>
+
+        <p class="about-text">
+            I am a 4th-year B.Tech Computer Science and Engineering student
+            specializing in Data Science. I am interested in transforming
+            data into meaningful insights and developing practical solutions
+            using data analytics, machine learning and related technologies.
+            I enjoy working on projects that combine technology, data and
+            real-world problems.
+        </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        <p class="section-subtitle">Technologies and areas I work with</p>
+
+        <div class="skills">
+            <span class="skill">Python</span>
+            <span class="skill">SQL</span>
+            <span class="skill">R</span>
+            <span class="skill">Data Analysis</span>
+            <span class="skill">Machine Learning</span>
+            <span class="skill">Deep Learning</span>
+            <span class="skill">NLP</span>
+            <span class="skill">Data Mining</span>
+            <span class="skill">Power BI</span>
+            <span class="skill">Data Visualization</span>
+            <span class="skill">ETL</span>
+            <span class="skill">SQL Server</span>
+            <span class="skill">SQLite</span>
+            <span class="skill">Jupyter Notebook</span>
+            <span class="skill">Big Data</span>
+            <span class="skill">Data Preprocessing</span>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <p class="section-subtitle">Some of my academic and technical work</p>
+
+        <div class="projects">
+
+            <div class="card">
+                <h3>GreenOS</h3>
+
+                <p>
+                    AI-based building energy and sustainability analysis
+                    system designed to analyze building metrics and provide
+                    sustainability insights and actionable recommendations.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Data Science</span>
+                    <span class="tag">AI</span>
+                    <span class="tag">React</span>
+                    <span class="tag">SQLite</span>
+                    <span class="tag">Data Analytics</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Online Retail Recommendation System</h3>
+
+                <p>
+                    A recommendation system developed using the Online Retail
+                    dataset to analyze customer purchasing patterns and
+                    generate product recommendations.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Machine Learning</span>
+                    <span class="tag">Data Analysis</span>
+                    <span class="tag">Recommendation System</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Handwriting Recognition</h3>
+
+                <p>
+                    A Python-based project focused on recognizing handwritten
+                    characters using image processing and machine learning
+                    techniques.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Machine Learning</span>
+                    <span class="tag">Image Processing</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+        <h2 class="section-title">Experience</h2>
+        <p class="section-subtitle">Internships and practical exposure</p>
+
+        <div class="experience">
+
+            <div class="experience-item">
+                <h3>Data Science / Data Analytics Intern</h3>
+                <div class="company">CCS Technologies</div>
+                <p>
+                    Gained practical exposure to data engineering and
+                    analytics workflows, including SQL, data processing,
+                    ETL concepts and working with structured datasets.
+                </p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Data Science / Python Internship</h3>
+                <div class="company">Plasmid</div>
+                <p>
+                    Worked with Python and data science concepts while
+                    gaining practical experience through internship work.
+                </p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Robotics Internship</h3>
+                <div class="company">Inker Robotics</div>
+                <p>
+                    Gained practical exposure to robotics and technology
+                    applications through hands-on learning.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications">
+        <h2 class="section-title">Certifications</h2>
+        <p class="section-subtitle">Courses, workshops and achievements</p>
+
+        <div class="certifications">
+
+            <div class="certificate">
+                <h3>Power BI</h3>
+                <p>Coursera</p>
+            </div>
+
+            <div class="certificate">
+                <h3>Python for Data Science</h3>
+                <p>NPTEL</p>
+            </div>
+
+            <div class="certificate">
+                <h3>Wheeled Mobile Robotics</h3>
+                <p>NPTEL</p>
+            </div>
+
+            <div class="certificate">
+                <h3>Robotics Workshop</h3>
+                <p>ShriShti</p>
+            </div>
+
+            <div class="certificate">
+                <h3>AI Workshop</h3>
+                <p>Hexinox</p>
+            </div>
+
+            <div class="certificate">
+                <h3>HackFit — National Level Hackathon</h3>
+                <p>HackFit 4.0</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="contact-box">
+            <h2 class="section-title">Let's Connect</h2>
+
+            <p>
+                I am interested in internships, entry-level opportunities
+                and projects related to Data Science, Data Analytics,
+                Machine Learning and related fields.
+            </p>
+
+            <div class="contact-links">
+
+                <a href="https://www.linkedin.com/in/sreevidya-v-babb36290/"
+                   target="_blank">
+                    LinkedIn
+                </a>
+
+                <a href="https://github.com/sreevidyav-25"
+                   target="_blank">
+                    GitHub
+                </a>
+
+                <!-- Replace this with your email -->
+                <a href="mailto:YOUR_EMAIL@gmail.com">
+                    Email
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Sreevidya V. Built with HTML & CSS.
+    </footer>
+
+</body>
+</html>
